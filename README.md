@@ -1,4 +1,4 @@
-# Init [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cn.zhaiyifan/init/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/cn.zhaiyifan/init)
+# Init [![](https://jitpack.io/v/luffyjet/init.svg)](https://jitpack.io/#luffyjet/init)
 Init helps app schedule complex task-group like initialization with type, priority and multi-process (you know that every process will run application's onCreate), thus improves efficiency.
 
 It is originally designed for application initialization, but not confined to that, and can be applied to any complex task-group(like initialization procedure).
