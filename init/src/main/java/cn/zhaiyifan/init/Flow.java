@@ -48,14 +48,40 @@ public class Flow {
      * @return Flow
      */
     public Flow addTask(int waveSeq, Task task) {
+        return addTask(waveSeq, task, ProcessUtils.myProcessName());
+    }
+
+    /**
+     * Add task to this flow.
+     *
+     * @param waveSeq Which wave sequence to add.
+     * @param task    task
+     * @param processName  current Process Name
+     * @return Flow
+     */
+    public Flow addTask(int waveSeq, Task task, String processName) {
         if (task != null) {
             Wave wave = mWaveArray.get(waveSeq);
             if (wave == null) {
-                wave = new Wave(waveSeq, ProcessUtils.myProcessName());
+                wave = new Wave(waveSeq, processName);
                 mWaveArray.put(waveSeq, wave);
             }
             wave.addTask(task);
             mTaskToWaveMap.put(task.getName(), waveSeq);
+        }
+        return this;
+    }
+
+    /**
+     * Add Wave to this flow.
+     *
+     * @param waveSeq wave sequence.
+     * @param wave    Wave
+     * @return Flow
+     */
+    public Flow addWave(int waveSeq, Wave wave) {
+        if (wave != null) {
+            mWaveArray.put(waveSeq, wave);
         }
         return this;
     }
